@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.settings.AboutUsActivity">
+
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout" />
+
+    <ImageView
+        android:id="@+id/ivAppImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+        android:id="@+id/tvVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:gravity="center"
+        android:text="Version : 1.0"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAppImg"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+        android:id="@+id/tvAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:gravity="center"
+        android:text="@string/about_us"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVersion"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_background_color">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imgBtnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="2dp"
+                android:background="@null"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:src="@drawable/ic_arrow_back_black" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/tvRightOption"
+                android:layout_toEndOf="@+id/imgBtnBack"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:gravity="start|center"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/large_text_size" />
+
+            <com.rent.renters.mylibrary.widgets.CustomButtonRegular
+                android:id="@+id/tvRightOption"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:background="@null"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:gravity="end|center_vertical"
+                android:textAllCaps="false"
+                android:textSize="@dimen/small_text_size"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.cardview.widget.CardView>

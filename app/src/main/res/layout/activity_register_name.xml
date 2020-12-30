@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <RelativeLayout
+        android:id="@+id/forget_pwd_header_part"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/app_transparent_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/imgBtnBack"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/back_button_padding"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_arrow_back_black" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/registerNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/forget_pwd_header_part">
+
+
+        <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_your_name"
+            android:textColor="@color/welcome_app_color"
+            android:textSize="@dimen/extra_large_text_size" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_large_margin"
+            android:hint="@string/first_name"
+            android:imeOptions="actionNext"
+            android:textColorHint="@color/text_black"
+            android:theme="@style/TextLabel"
+            app:hintTextAppearance="@style/TextLabelHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_bottom_line"
+                android:imeOptions="actionNext"
+
+                android:paddingTop="@dimen/material_text_view_padding"
+
+                android:paddingBottom="@dimen/material_text_view_padding"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/text_black"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_large_margin"
+            android:hint="@string/last_name"
+            android:imeOptions="actionNext"
+            android:textColorHint="@color/text_black"
+            android:theme="@style/TextLabel"
+            app:hintTextAppearance="@style/TextLabelHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:maxLength="30"
+                android:background="@drawable/text_bottom_line"
+                android:imeOptions="actionNext"
+                android:paddingTop="@dimen/material_text_view_padding"
+                android:paddingBottom="@dimen/material_text_view_padding"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:textColor="@color/text_black"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/ivNext"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginEnd="@dimen/default_medium_margin"
+            android:layout_marginBottom="@dimen/default_extra_large_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="@dimen/next_icon_size"
+            android:layout_height="@dimen/next_icon_size"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_next_circle_btn" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

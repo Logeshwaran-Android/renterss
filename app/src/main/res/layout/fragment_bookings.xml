@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".app.ui.reservations.ReservationsFragment">
+
+ <include
+     layout="@layout/header_layout"
+     android:id="@+id/headerLayout"/>
+
+    <LinearLayout
+        android:id="@+id/llFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/default_medium_margin"
+            android:layout_marginTop="@dimen/default_medium_margin"
+            android:layout_marginBottom="@dimen/default_medium_margin"
+            android:background="@color/transparent"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            app:tabBackground="@drawable/tab_circle_background"
+            app:tabRippleColor="@color/transparent"
+            android:stateListAnimator="@null"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="@dimen/button_padding"
+            app:tabPaddingStart="@dimen/button_padding"
+            app:tabSelectedTextColor="@color/text_white"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabTextColor="@color/text_black"
+            />
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- <androidx.core.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/cvHeader">
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+
+             <androidx.constraintlayout.widget.ConstraintLayout
+                 android:id="@+id/clReservation"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 >
+                 <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/rvReservationFilter"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/default_medium_margin"
+                     android:layout_marginBottom="@dimen/default_medium_margin"
+                     android:layout_marginStart="@dimen/default_small_margin"
+                     android:layout_marginEnd="@dimen/default_small_margin"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.0"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
+             <RelativeLayout
+                 android:id="@+id/rlFilter"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/clReservation"
+                 android:layout_margin="@dimen/default_medium_margin"
+                 android:visibility="gone">
+
+                 <com.rent.renters.mylibrary.widgets.CustomTextView
+                     android:id="@+id/tvSearch"
+                     android:layout_width="wrap_content"
+                     android:layout_height="@dimen/edit_text_height"
+                     android:layout_alignParentStart="true"
+                     android:layout_centerVertical="true"
+                     android:layout_toStartOf="@+id/imgBtnFilter"
+                     android:background="@drawable/search_edit_text"
+                     android:drawableStart="@drawable/ic_search"
+                     android:drawablePadding="10dp"
+                     android:gravity="start|center"
+                     android:hint="@string/search_transaction"
+                     android:paddingStart="10dp"
+                     android:paddingEnd="10dp" />
+
+                 <ImageButton
+                     android:id="@+id/imgBtnFilter"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentEnd="true"
+                     android:layout_marginStart="@dimen/default_medium_margin"
+                     android:src="@android:drawable/ic_btn_speak_now" />
+
+             </RelativeLayout>
+
+             <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/rvBookingList"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_below="@+id/rlFilter"
+                 android:layout_marginStart="@dimen/default_medium_margin"
+                 android:layout_marginEnd="@dimen/default_medium_margin" />
+         </RelativeLayout>
+     </androidx.core.widget.NestedScrollView>-->
+</LinearLayout>

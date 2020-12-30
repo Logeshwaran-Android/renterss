@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/llBottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".app.ui.payment.CardPaymentActivity">
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvCardType"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@null"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:text="@string/card_type"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/etCardType"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:hint="@string/choose_card_type"
+                android:background="@drawable/border_edittext"
+                android:padding="@dimen/text_view_padding"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCardType"
+                app:layout_constraintVertical_bias="0.0"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_down_black"/>
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvCardNumber"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@null"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:text="@string/card_number"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCardType"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etCardNumber"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:longClickable="false"
+                android:inputType="number"
+                android:hint="@string/card_number_hint"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:background="@drawable/border_edittext"
+                android:padding="@dimen/text_view_padding"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCardNumber"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvValidDate"
+                android:textColor="@color/text_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@null"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:text="@string/valid_until"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCardNumber"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/etValidDate"
+                android:textColor="@color/text_black"
+                android:layout_width="0dp"
+                android:maxLength="5"
+                android:inputType="number"
+                android:hint="@string/valide_date_hint"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:background="@drawable/border_edittext"
+                android:padding="@dimen/text_view_padding"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvValidDate"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvCVV"
+                android:textColor="@color/text_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@null"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:text="@string/CVV"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/etCardNumber"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etCVV"
+                android:textColor="@color/text_black"
+                android:layout_width="0dp"
+                android:maxLength="3"
+                android:inputType="numberPassword"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:background="@drawable/border_edittext"
+                android:padding="@dimen/text_view_padding"
+                android:hint="@string/cvv_hint"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/tvValidDate"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvCardHolder"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@null"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:text="@string/card_holder"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCVV"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etCardHolder"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:background="@drawable/border_edittext"
+                android:padding="@dimen/text_view_padding"
+                android:hint="@string/your_name"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCardHolder"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.rent.renters.mylibrary.widgets.CustomButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_medium_margin"
+            android:background="@drawable/rectangle_curve_button"
+            android:gravity="center"
+            android:text="@string/proceed_to_payment"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

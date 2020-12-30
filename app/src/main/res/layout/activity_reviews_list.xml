@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.reviews.DetailPageReviewsListActivity">
+
+   <include
+       layout="@layout/header_layout"
+       android:id="@+id/headerLayout"/>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svReviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:id="@+id/tvTotalReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_star_filled"
+                android:layout_marginTop="@dimen/default_medium_margin"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:textSize="@dimen/large_text_size"
+                android:textColor="@color/text_black"
+                />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviewsAverage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:layout_below="@+id/tvTotalReview"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rvReviewsAverage"
+        android:layout_margin="@dimen/default_medium_margin"
+        />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

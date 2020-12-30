@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        layout="@layout/header_layout"
+        android:id="@+id/headerLayout"/>
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvCountryCode"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/select_country"
+        android:textSize="@dimen/large_text_size"
+        android:layout_below="@+id/headerLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCountryCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCountryCode"
+        android:layout_above="@+id/btnNext"
+        android:layout_marginBottom="100dp"
+        android:layout_margin="@dimen/default_medium_margin"/>
+
+    <com.rent.renters.mylibrary.widgets.CustomButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_curve_button"
+     android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/text_white"
+        android:drawableEnd="@drawable/ic_next_arrow_white"
+        android:paddingEnd="@dimen/default_medium_margin"
+        android:paddingStart="@dimen/default_medium_margin"/>
+
+</RelativeLayout>

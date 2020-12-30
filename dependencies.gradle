@@ -1,0 +1,153 @@
+ext {
+    // Plugins
+    androidGradlePlugin = '3.4.2'
+
+    // Versions
+    kotlinVersion = '1.3.50'
+    coroutineVersion = '1.0.1'
+    supportVersion = '1.1.0-rc01'
+    supportAppCompatVersion = '1.1.0'
+    materialVersion = '1.2.0-alpha01'
+    lifecycleVersion = '2.2.0-rc01'
+    roomVersion = '2.2.1'
+
+    // Testing
+    jUnitVersion = '4.13-rc-1'
+    espressoVersion = '3.3.0-alpha02'
+    testRunnerVersion = '1.3.0-alpha02'
+
+
+    // Kotlin
+    kotlinLibraries = [
+            kotlin    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    ]
+
+    // Support Libraries
+    supportLibraries = [
+            appCompat   : "androidx.appcompat:appcompat:${supportAppCompatVersion}",
+            cardView    : "androidx.cardview:cardview:1.0.0",
+            recyclerView: "androidx.recyclerview:recyclerview:${supportVersion}",
+            material    : "com.google.android.material:material:${materialVersion}",
+
+    ]
+
+    // Arch Components
+    archLibraries = [
+            lifecycle        : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            lifecycleCompiler: "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+
+            room             : "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler     : "androidx.room:room-compiler:${roomVersion}",
+            roomCoroutines   : "androidx.room:room-coroutines:2.1.0-alpha04"
+    ]
+
+
+    // Testing
+    testLibraries = [
+            junit     : "junit:junit:${jUnitVersion}",
+            testRunner: "androidx.test:runner:${testRunnerVersion}",
+            espresso  : "androidx.test.espresso:espresso-core:${espressoVersion}",
+    ]
+
+    // Anko
+    ankoLibraries = [
+            anko     : "org.jetbrains.anko:anko-sdk25:0.10.2",
+            appCompat     : "org.jetbrains.anko:anko-appcompat-v7:0.10.2",
+            coroutines     : "org.jetbrains.anko:anko-sdk25-coroutines:0.10.2",
+            appcompatcoroutines     : "org.jetbrains.anko:anko-appcompat-v7-coroutines:0.10.2",
+    ]
+
+    // circleimage
+    circleLibraries = [
+            circleimg     : "de.hdodenhof:circleimageview:2.2.0",
+    ]
+
+
+
+    // glide
+    glideLibraries = [
+            glide     : "com.github.bumptech.glide:glide:4.9.0",
+    ]
+
+
+    // lottie
+    lottieLibraries = [
+            lottie     : "com.airbnb.android:lottie:2.2.5",
+    ]
+
+    // permissioncheck
+    permissionLibraries = [
+            permissioncheck     : "com.nabinbhandari.android:permissions:3.7",
+    ]
+
+
+    // evernote
+    evernoteLibraries = [
+            evernotess     : "com.evernote:android-job:1.3.0-rc1",
+    ]
+
+
+    // google services
+    googlesLibraries = [
+            location     : "com.google.android.gms:play-services-location:17.0.0",
+            maps        : "com.google.android.gms:play-services-maps:17.0.0",
+            places      : "com.google.android.gms:play-services-places:17.0.0",
+            messaging   : "com.google.firebase:firebase-messaging:19.0.1",
+            core        : "com.google.firebase:firebase-core:17.0.1",
+            auth        : "com.google.android.gms:play-services-auth:17.0.0",
+            utils       : "com.google.maps.android:android-maps-utils:0.4.4",
+            databasess       : "com.google.firebase:firebase-database:18.0.0",
+            authdatabasess       : "com.google.firebase:firebase-auth:18.0.0",
+
+    ]
+
+
+    // navigate library
+    navgiagteLibraries = [
+            navfrag     : "android.arch.navigation:navigation-fragment:1.0.0-alpha04",
+            navui     : "android.arch.navigation:navigation-ui:1.0.0-alpha04",
+    ]
+
+    // constraint
+    constraintLibraries = [
+            constraintla     : "com.android.support.constraint:constraint-layout:1.1.3",
+    ]
+
+
+
+
+    // retrofit library
+    retrofittLibraries = [
+            retrofits     : "com.squareup.retrofit2:retrofit:2.4.0",
+            retrofitgson     : "com.squareup.retrofit2:converter-gson:2.4.0",
+    ]
+
+
+    // eventbus library
+    eventbusLibraries = [
+            eventbus     : "org.greenrobot:eventbus:3.0.0",
+    ]
+
+    // expandable library
+    expandableLibraries = [
+            expandablelibb     : "com.github.paolorotolo:expandableheightlistview:1.0.0",
+
+    ]
+
+
+
+
+
+    gradlePlugins = [
+            kotlin : "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}",
+            android: "com.android.tools.build:gradle:${androidGradlePlugin}",
+            navigation: "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha04",
+            mavenn: "com.github.dcendents:android-maven-gradle-plugin:1.4.1",
+            googleservicesl: "com.google.gms:google-services:4.2.0",
+            frog: "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4",
+            crashlytics : "io.fabric.tools:gradle:1.31.2"
+
+
+    ]
+}

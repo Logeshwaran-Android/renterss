@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    tools:context=".app.ui.verification.OtpPageActivity">
+
+  <include
+      layout="@layout/header_layout"
+      android:id="@+id/headerLayout"/>
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvOtp"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/enter_6digit_code"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvOtpDesc"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOtp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.rent.renters.mylibrary.widgets.CustomEdittext
+        android:id="@+id/etOtp"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:maxLength="6"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:background="@null"
+        android:paddingBottom="@dimen/default_medium_margin"
+        android:gravity="start"
+        android:hint="@string/six_digit_code"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOtpDesc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/viewOtp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:background="@color/light_gray_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etOtp"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <com.rent.renters.mylibrary.widgets.CustomButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@drawable/rectangle_curve_button"
+        android:drawableEnd="@drawable/ic_next_arrow_white"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/text_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:paddingEnd="@dimen/drawable_padding"
+        android:paddingStart="@dimen/drawable_padding"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

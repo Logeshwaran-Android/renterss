@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.ui.reservations.ReservationsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+        android:elevation="@dimen/card_elevation"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        card_view:cardPreventCornerOverlap="false"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvReservation"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:layout_marginStart="@dimen/default_small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+
+                >
+                <ImageView
+                    android:id="@+id/ivSpace"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_empty_space"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReservationDetails"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cvReservation"
+                app:layout_constraintTop_toTopOf="@+id/cvReservation"
+                app:layout_constraintBottom_toBottomOf="@+id/cvReservation"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:layout_marginStart="@dimen/default_medium_margin">
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvSpaceName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_app_color"
+                    android:textSize="@dimen/large_text_size"
+                    android:layout_marginEnd="@dimen/default_medium_margin"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0" />
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvBookedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpaceName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintHorizontal_bias="0.0"/>
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvAddressVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBookedDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:weightSum="2"
+                android:id="@+id/llBookingGuest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topLayout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/default_medium_margin"
+                android:layout_marginBottom="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:layout_marginStart="@dimen/default_small_margin">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvBookingNo"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/booking_no"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+
+
+                <View
+                    android:id="@+id/viewBookingNo"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvGuest"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/guest"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llBookingDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingGuest"
+                app:layout_constraintBottom_toTopOf="@+id/viewBookingLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                android:weightSum="2"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin">
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvBookingNoVal"
+
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:textColor="@color/text_black"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+
+
+                <View
+                    android:id="@+id/viewBookingNoVal"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvGuestVal"
+
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="@color/text_black"
+                    />
+
+            </LinearLayout>
+            <View
+                android:id="@+id/viewBookingGuestLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:background="@color/light_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingDetails" />
+            <LinearLayout
+                android:weightSum="2"
+                android:id="@+id/llBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewBookingGuestLine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvBookingFee"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/booking_fee"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+
+
+                <View
+                    android:id="@+id/viewBooking"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvServiceFee"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/service_fee"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llBookingVal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBooking"
+                app:layout_constraintBottom_toTopOf="@+id/viewBookingGuestLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                android:weightSum="2"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin">
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvBookingFeeVal"
+
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:textColor="@color/text_black"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+
+
+                <View
+                    android:id="@+id/viewBookingVal"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvServiceFeeVal"
+
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="@color/text_black"
+                    />
+
+            </LinearLayout>
+            <View
+                android:id="@+id/viewBookingLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:background="@color/light_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingVal" />
+
+
+            <LinearLayout
+                android:weightSum="2"
+                android:id="@+id/llBookingGues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingVal"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvAcceptanceFee"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acceptance_fee"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:paddingTop="@dimen/text_view_padding"
+                    />
+
+
+                <View
+                    android:id="@+id/viewGuest"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvNetAmount"
+                    android:textColor="@color/text_black"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/net_amount"
+                    android:paddingTop="@dimen/text_view_padding"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llBookingValTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingGues"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                android:weightSum="2"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:layout_marginBottom="@dimen/default_small_margin">
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvAcceptanceFeeVal"
+
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:textColor="@color/text_black"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+
+
+                <View
+                    android:id="@+id/viewGuestVal"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray_color"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvNetAmountVal"
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:paddingTop="@dimen/tv_small_padding"
+                    android:paddingBottom="@dimen/tv_small_padding"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="@color/text_black"
+                    />
+
+
+            </LinearLayout>
+            <View
+                android:id="@+id/viewBillingLineTop"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray_color"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llBookingValTwo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+            <LinearLayout
+                android:id="@+id/llBillingDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewBillingLineTop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone">
+                <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/text_black"
+                    android:text="@string/billing_details"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:layout_marginBottom="@dimen/default_small_margin"
+                    android:id="@+id/tvBillingDetails"/>
+                <LinearLayout
+                    android:weightSum="2"
+                    android:id="@+id/llBillingOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cvReservation"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_marginEnd="@dimen/default_small_margin">
+
+                    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                        android:id="@+id/tvPaidAmount"
+                        android:textColor="@color/text_black"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paid_amount"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        />
+
+
+                    <View
+                        android:id="@+id/viewAmount"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray_color"
+                        />
+                    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                        android:id="@+id/tvTransactionNo"
+                        android:textColor="@color/text_black"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="@string/transaction_no"
+                        />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llBillingOneVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llBillingOne"
+                    app:layout_constraintBottom_toTopOf="@+id/viewBillingLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:weightSum="2"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_marginEnd="@dimen/default_small_margin">
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvPaidAmountVal"
+                        android:layout_width="0dp"
+                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/tv_small_padding"
+                        android:paddingBottom="@dimen/tv_small_padding"
+                        android:textColor="@color/text_black"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        />
+
+
+                    <View
+                        android:id="@+id/viewBillingOneVal"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray_color"
+                        />
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvTransactionNoVal"
+                        android:layout_width="0dp"
+                        android:singleLine="true"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:paddingTop="@dimen/tv_small_padding"
+                        android:paddingBottom="@dimen/tv_small_padding"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textColor="@color/text_black"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/viewBillingLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_marginEnd="@dimen/default_small_margin"
+                    android:background="@color/light_gray_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llBillingOneVal" />
+
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:id="@+id/llBillingTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/viewBillingLine"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_marginEnd="@dimen/default_small_margin">
+
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvTransactionDate"
+                        android:textColor="@color/text_black"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_of_transaction"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:paddingTop="@dimen/text_view_padding"
+                        />
+
+
+                    <View
+                        android:id="@+id/viewDate"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray_color"
+                        />
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvPaymentType"
+                        android:textColor="@color/text_black"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="@string/payment_type"
+                        android:paddingTop="@dimen/text_view_padding"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llBillingValTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llBillingTwo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:weightSum="2"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    android:layout_marginEnd="@dimen/default_small_margin"
+                    android:layout_marginBottom="@dimen/default_small_margin">
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvTransactionDateVal"
+
+                        android:layout_width="0dp"
+                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/tv_small_padding"
+                        android:paddingBottom="@dimen/tv_small_padding"
+                        android:textColor="@color/text_black"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        />
+
+
+                    <View
+                        android:id="@+id/viewDateVal"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray_color"
+                        />
+                    <com.rent.renters.mylibrary.widgets.CustomTextView
+                        android:id="@+id/tvPaymentTypeVal"
+                        android:layout_width="0dp"
+                        android:singleLine="true"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:paddingTop="@dimen/tv_small_padding"
+                        android:paddingBottom="@dimen/tv_small_padding"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textColor="@color/text_black"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

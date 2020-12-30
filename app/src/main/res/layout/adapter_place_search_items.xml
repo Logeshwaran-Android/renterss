@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/placeSearchLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/tvPlaceName"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anywhere"
+        android:gravity="start|center"
+        android:textSize="@dimen/small_text_size"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"
+        android:drawablePadding="@dimen/drawable_padding"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvPlaceName"
+        android:background="@color/light_gray_color"
+        android:id="@+id/viewAnyWhere"/>
+
+</RelativeLayout>

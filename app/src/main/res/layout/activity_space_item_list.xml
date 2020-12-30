@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true">
+
+  <RelativeLayout
+      android:id="@+id/headerLayout"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0">
+
+  <ImageButton
+      android:id="@+id/imgBtnBack"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_centerVertical="true"
+      android:background="@null"
+      android:layout_marginStart="@dimen/default_medium_margin"
+      android:paddingStart="0dp"
+      android:paddingEnd="@dimen/drawable_padding"
+      android:contentDescription="@string/app_name"
+      android:src="@drawable/ic_arrow_back_black"
+      />
+
+  <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/tvSearch"
+      android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:background="@drawable/search_edit_text"
+        android:drawableStart="@drawable/ic_search_icon"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+      android:singleLine="true"
+        android:gravity="start|center"
+        android:hint="@string/search_hint"
+      android:layout_toEndOf="@+id/imgBtnBack"
+
+         />
+  </RelativeLayout>
+
+  <HorizontalScrollView
+      android:id="@+id/horizontalScroll"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+      app:layout_constraintVertical_bias="0.0"
+      android:scrollbars="none"
+      android:layout_margin="@dimen/default_medium_margin">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/btnDates"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_border_button"
+        android:gravity="center"
+        android:padding="@dimen/text_view_padding"
+        android:text="@string/dates"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/btnSpaceSize"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_small_margin"
+        android:background="@drawable/rectangle_border_button"
+        android:gravity="center"
+        android:padding="@dimen/text_view_padding"
+        android:text="@string/space_size"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDates"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnDates"
+        app:layout_constraintTop_toTopOf="@+id/btnDates" />
+      <com.rent.renters.mylibrary.widgets.CustomTextView
+          android:id="@+id/btnGuest"
+          android:textColor="@color/text_black"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/default_small_margin"
+          android:background="@drawable/rectangle_border_button"
+          android:gravity="center"
+          android:padding="@dimen/text_view_padding"
+          android:text="@string/guests"
+          android:textAllCaps="false"
+          app:layout_constraintBottom_toBottomOf="@+id/btnSpaceSize"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/btnSpaceSize"
+          app:layout_constraintTop_toTopOf="@+id/btnSpaceSize" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/btnMoreFilters"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_small_margin"
+        android:background="@drawable/rectangle_border_button"
+        android:gravity="center"
+        android:padding="@dimen/text_view_padding"
+        android:text="@string/more_filters"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGuest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnGuest"
+        app:layout_constraintTop_toTopOf="@+id/btnGuest"
+        android:layout_marginEnd="@dimen/default_medium_margin"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </HorizontalScrollView>
+
+  <include
+      layout="@layout/no_data_layout"
+      android:id="@+id/noDataLayout"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginBottom="@dimen/default_medium_margin"
+      android:layout_marginStart="@dimen/default_small_margin"
+      android:layout_marginTop="@dimen/default_small_margin"
+      android:layout_marginEnd="@dimen/default_small_margin"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/horizontalScroll"
+      android:visibility="gone"
+
+      />
+  <com.facebook.shimmer.ShimmerFrameLayout
+      android:id="@+id/shimmer_view_container"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginBottom="@dimen/default_medium_margin"
+      android:layout_marginStart="@dimen/default_small_margin"
+      android:layout_marginTop="@dimen/default_small_margin"
+      android:layout_marginEnd="@dimen/default_small_margin"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/horizontalScroll"
+      app:layout_constraintVertical_bias="0.0"
+      shimmer:duration="1200"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+      <View
+          android:id="@+id/thumbnail"
+          android:layout_margin="@dimen/default_medium_margin"
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:background="@color/light_gray_color"
+          />
+      <View
+          android:id="@+id/thumbnail1"
+          android:layout_margin="@dimen/default_medium_margin"
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:background="@color/light_gray_color"
+          />
+      <View
+          android:id="@+id/thumbnail2"
+          android:layout_margin="@dimen/default_medium_margin"
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:background="@color/light_gray_color"
+          />
+
+    </LinearLayout>
+
+  </com.facebook.shimmer.ShimmerFrameLayout>
+
+  <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+      android:id="@+id/swipeRefreshLayout"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginTop="@dimen/default_small_margin"
+      android:layout_marginBottom="@dimen/default_medium_margin"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/horizontalScroll"
+      app:layout_constraintVertical_bias="0.0" >
+
+  <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSpaceTypeItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+      />
+  </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_map_pin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

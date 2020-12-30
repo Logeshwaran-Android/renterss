@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@android:color/white"
+    >
+
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvSpaceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:text="@string/name_space"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <com.rent.renters.mylibrary.widgets.CustomEdittext
+        android:id="@+id/etSpaceNameVal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:hint="@string/space_name"
+        android:background="@drawable/text_bottom_line"
+        android:maxLines="2"
+        android:maxLength="50"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpaceName"
+        app:layout_constraintVertical_bias="0.0"
+        android:paddingBottom="@dimen/drawable_padding"
+        />
+
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvMaxName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:text="@string/max_50_char"
+        android:maxLength="50"
+        android:textSize="@dimen/micro_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSpaceNameVal"
+        app:layout_constraintVertical_bias="0.0" />
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvAddPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:text="@string/add_banner_photo"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaxName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivSpaceBannerPhoto"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddPhoto"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_default_img_upload"
+        android:scaleType="centerCrop" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvSpacePhotos"
+        app:layout_constraintTop_toBottomOf="@+id/ivSpaceBannerPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:visibility="gone"
+        android:layout_marginBottom="80dp"
+        />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ivSpaceBannerPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/tvNoData"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

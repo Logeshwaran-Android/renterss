@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.userHomePage.SpaceSizeActivity">
+
+   <include
+       layout="@layout/header_layout"
+       android:id="@+id/headerLayout"/>
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvSpaceSize"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:text="@string/space_size_sq_ft"
+        android:textSize="@dimen/large_text_size" />
+
+    <com.rent.renters.mylibrary.util.RangeSeekBar
+        android:id="@+id/rangeSeekBarSpaceSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSpaceSize"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        rsb:barHeight="@dimen/seek_bar_height"
+        rsb:defaultColor="@color/light_gray_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <com.rent.renters.mylibrary.widgets.CustomButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_medium_margin"
+            android:background="@drawable/rectangle_curve_button"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

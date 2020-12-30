@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".app.ui.profile.AboutMeActivity">
+
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout" />
+
+
+
+        <com.rent.renters.mylibrary.widgets.CustomEdittext
+            android:id="@+id/etAboutMe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/default_medium_margin"
+            android:background="@drawable/border_edittext"
+            android:padding="@dimen/text_view_padding"
+            android:layout_below="@+id/headerLayout"
+            android:layout_above="@+id/tvAboutMeWordCount"
+            android:textColor="@color/text_black"
+            android:gravity="start"/>
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvAboutMeWordCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llBottomLayout"
+        android:textSize="@dimen/micro_text_size"
+        android:text="@string/one_fifty_words_left"
+        android:layout_marginStart="@dimen/default_medium_margin"/>
+
+
+    <LinearLayout
+        android:id="@+id/llBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <com.rent.renters.mylibrary.widgets.CustomButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_medium_margin"
+            android:background="@drawable/rectangle_curve_button"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

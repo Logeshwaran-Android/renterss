@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.inbox.TravellingInboxFragment">
+    <include
+        layout="@layout/header_layout"
+        android:id="@+id/headerLayout"/>
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerLayout">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTravellingInbox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <include
+        layout="@layout/no_data_layout"
+        android:id="@+id/noDataLayout"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+
+    <RelativeLayout
+        android:id="@+id/forget_pwd_header_part"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/app_transparent_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/imgBtnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_arrow_back_black"
+                android:background="@null"
+                android:padding="@dimen/back_button_padding"
+                android:layout_alignParentStart="true"/>
+
+
+
+        <com.rent.renters.mylibrary.widgets.CustomTextView
+            android:id="@+id/tvForgotPw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/default_medium_margin"
+            android:gravity="end"
+            android:text="@string/forgot_pw"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/micro_text_size" />
+
+
+    </RelativeLayout>
+
+        <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+            android:layout_marginStart="@dimen/default_medium_margin"
+            android:layout_marginEnd="@dimen/default_medium_margin"
+            android:layout_marginBottom="@dimen/default_medium_margin"
+            android:layout_marginTop="@dimen/default_medium_margin"
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_header"
+            android:textColor="@color/welcome_app_color"
+            android:textSize="@dimen/extra_large_text_size"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forget_pwd_header_part"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_medium_margin"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="@dimen/default_medium_margin"
+            android:hint="@string/email_address"
+            app:errorEnabled="false"
+            android:imeOptions="actionNext"
+            android:textColorHint="@color/text_black"
+            android:theme="@style/TextLabel"
+            app:hintTextAppearance="@style/TextLabelHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etEmail"
+                android:background="@drawable/text_bottom_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:maxLines="1"
+                android:paddingTop="@dimen/material_text_view_padding"
+                android:paddingBottom="@dimen/material_text_view_padding"
+                android:singleLine="true"
+                android:textColor="@color/text_black"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_medium_margin"
+            android:layout_marginTop="@dimen/default_extra_large_margin"
+            android:layout_marginRight="@dimen/default_medium_margin"
+            android:hint="@string/password"
+            android:imeOptions="actionNext"
+            android:textColorHint="@color/text_black"
+            android:theme="@style/TextLabel"
+            app:hintTextAppearance="@style/TextLabelHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.rent.renters.mylibrary.widgets.CustomEdittext
+                android:id="@+id/etPassword"
+                android:background="@drawable/text_bottom_line"
+                android:layout_width="match_parent"
+                android:inputType="textPassword|textNoSuggestions"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                app:errorEnabled="true"
+                android:paddingTop="@dimen/material_text_view_padding"
+                android:paddingBottom="@dimen/material_text_view_padding"
+                android:singleLine="true"
+                android:textColor="@color/text_black"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show"
+        android:textSize="@dimen/micro_text_size"
+        android:id="@+id/tvPwShow"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        android:layout_marginLeft="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_large_margin"
+        android:layout_marginRight="@dimen/default_medium_margin"
+        android:visibility="gone"/>
+
+    <com.rent.renters.mylibrary.widgets.CustomButtonRegular
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/login_btn_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/welcome_appcolor_curve_button"
+        android:layout_marginTop="@dimen/default_extra_large_margin"
+        android:text="@string/login"
+        android:textColor="@color/text_white"
+        android:textAllCaps="false"
+        android:layout_margin="@dimen/default_medium_margin"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="@dimen/drawable_padding"
+        android:paddingEnd="@dimen/drawable_padding"
+
+
+        />
+
+        <ImageView
+            android:id="@+id/ivNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_next_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/default_medium_margin"
+            android:layout_marginBottom="@dimen/default_medium_margin"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

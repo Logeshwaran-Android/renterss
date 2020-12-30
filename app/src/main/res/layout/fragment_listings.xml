@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.listing.ListingsFragment"
+    >
+
+  <include
+      layout="@layout/header_layout"
+      android:id="@+id/headerLayout"/>
+
+        <RelativeLayout
+            android:id="@+id/listingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerLayout"
+            >
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvListOption"
+                android:drawableEnd="@drawable/ic_drop_down_arrow"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:background="@drawable/border_edittext"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/medium_text_size"
+                android:text="@string/all"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:gravity="start|center"
+                android:padding="10dp"
+                />
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvListOption">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMyListing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        </RelativeLayout>
+
+    <include
+        layout="@layout/no_data_layout"
+        android:id="@+id/noDataLayout"
+        android:visibility="gone"/>
+
+
+
+    <ImageView
+        android:id="@+id/fabAddList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_new_listing"
+        />
+
+
+</RelativeLayout>

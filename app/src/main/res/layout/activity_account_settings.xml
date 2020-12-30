@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.settings.AccountSettingsActivity">
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout"/>
+
+    <com.rent.renters.mylibrary.widgets.CustomButton
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/delete_my_account"
+        android:textSize="@dimen/medium_text_size"
+        android:paddingStart="@dimen/drawable_padding"
+        android:paddingEnd="@dimen/drawable_padding"
+        android:textColor="@android:color/holo_red_light"
+        android:gravity="start|center"
+        android:textAllCaps="false"
+        android:background="@color/white_gray_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

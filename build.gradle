@@ -1,0 +1,55 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    apply from: "dependencies.gradle"
+
+    repositories {
+        google()
+        maven { url "https://jitpack.io" }
+
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    dependencies {
+        classpath gradlePlugins.android
+        classpath gradlePlugins.kotlin
+        classpath gradlePlugins.navigation
+        classpath gradlePlugins.mavenn
+        classpath gradlePlugins.googleservicesl
+        classpath gradlePlugins.frog
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    libraries = [
+            annotations: "com.android.support:support-annotations:26.0.1"
+    ]
+
+    minSdkVersion = 16
+    compileSdkVersion = 29
+    junit = 'junit:junit:4.12'
+    truth = 'com.google.truth:truth:0.43'
+    testOrchestrator = 'androidx.test:orchestrator:1.1.1'
+    testRunner = 'androidx.test:runner:1.1.1'
+    testRules = 'androidx.test:rules:1.1.1'
+    robolectric = 'org.robolectric:robolectric:3.7.1'
+    threetenbp = 'org.threeten:threetenbp:1.4.0:no-tzdb'
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

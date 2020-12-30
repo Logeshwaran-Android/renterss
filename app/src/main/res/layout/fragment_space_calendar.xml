@@ -1,0 +1,153 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+   <include
+       layout="@layout/header_layout"
+       android:id="@+id/headerLayout"
+       android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStartEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"
+        android:layout_marginTop="@dimen/default_small_margin">
+        <com.rent.renters.mylibrary.widgets.CustomTextView
+            android:id="@+id/tvUnAvailableDates"
+            android:textColor="@color/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="2dp"
+
+            android:gravity="start|center_vertical"
+            android:drawableStart="@drawable/ic_unavailable_dates"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintVertical_bias="0.0"
+            android:text="@string/unavailable" />
+        <com.rent.renters.mylibrary.widgets.CustomTextView
+            android:id="@+id/tvBookedDates"
+            android:textColor="@color/text_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/extra_large_text_size"
+            android:gravity="start|center_vertical"
+            android:drawableStart="@drawable/ic_booked_dates"
+            android:drawablePadding="2dp"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvUnAvailableDates"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:text="@string/booked" />
+
+
+        <com.rent.renters.mylibrary.widgets.CustomTextView
+            android:id="@+id/tvStartDate"
+            android:textColor="@color/text_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/default_small_margin"
+            android:layout_marginTop="@dimen/default_small_margin"
+            android:gravity="start|center_vertical"
+            android:minLines="2"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/exFourHeaderDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUnAvailableDates"
+            tools:text="Mon\n22 Apr" />
+
+        <View
+            android:id="@+id/exFourHeaderDivider"
+            android:layout_width="1.5dp"
+            android:layout_height="0dp"
+            android:background="#EAEAEA"
+            android:rotation="45"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
+
+        <com.rent.renters.mylibrary.widgets.CustomTextView
+            android:id="@+id/tvEndDate"
+            android:textColor="@color/text_black"
+            android:layout_marginTop="@dimen/default_small_margin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="@dimen/default_small_margin"
+            android:gravity="end|center_vertical"
+            android:minLines="2"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/exFourHeaderDivider"
+            app:layout_constraintTop_toBottomOf="@+id/tvBookedDates"
+            tools:text="Thu\n9 May" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/calendarDayLayout"
+        layout="@layout/calendar_day_legend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clStartEndDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarDayLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.kizitonwose.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            app:cv_dayViewResource="@layout/calendar_day_price_view"
+            app:cv_monthHeaderResource="@layout/calendar_month_header_view" />
+
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

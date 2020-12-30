@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.searchLocation.SearchActivity"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout" />
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvWhereTo"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/anywhere"
+        android:textSize="@dimen/large_text_size" />
+    <RelativeLayout
+        android:id="@+id/rlSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWhereTo"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin">
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteSearchTxt"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/ivLocation"
+        android:hint="@string/where_to_go"
+        android:background="@null"
+        android:singleLine="true"
+        android:textSize="@dimen/medium_text_size"
+        android:labelFor="@+id/tvWhereTo"
+        android:paddingTop="@dimen/button_padding"
+        android:paddingBottom="@dimen/button_padding"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_location"
+        android:tint="@color/app_color"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/drawable_padding"
+
+        />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray_color"
+            android:layout_below="@+id/autoCompleteSearchTxt"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNearbyPlaces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlSearch"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_small_margin" />
+
+
+</RelativeLayout>

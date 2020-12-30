@@ -1,0 +1,141 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background_color"
+        >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imgBtnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingStart="0dp"
+                android:paddingEnd="@dimen/drawable_padding"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_arrow_back_black"
+                android:layout_marginEnd="@dimen/default_medium_margin"/>
+            <com.rent.renters.mylibrary.widgets.CircleImageView
+                android:id="@+id/ivSender"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@+id/imgBtnBack"
+                android:layout_centerVertical="true"
+                />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvSenderName"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivSender"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:layout_toStartOf="@+id/tvDetails"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:gravity="start|center"
+                android:textSize="@dimen/large_text_size" />
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvDetails"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@color/text_app_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/text_view_padding"
+                android:paddingBottom="@dimen/text_view_padding"
+                android:singleLine="true"
+                android:layout_centerVertical="true"
+                android:text="@string/details"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:gravity="start|center"
+                android:textSize="@dimen/medium_text_size" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    </androidx.cardview.widget.CardView>
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvEnquiryDetails"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="@dimen/default_medium_margin"
+        android:paddingRight="@dimen/default_medium_margin"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout"
+        android:gravity="center"
+        android:textSize="@dimen/small_text_size" />
+    <com.stfalcon.chatkit.messages.MessagesList
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view"
+        android:layout_below="@+id/tvEnquiryDetails"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/llBottomLayout"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/gray"/>
+
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:id="@+id/llBottomLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true">
+
+        <com.stfalcon.chatkit.messages.MessageInput
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:inputHint="@string/hint_enter_a_message"
+            app:showAttachmentButton="false"/>
+    <LinearLayout
+        android:id="@+id/llBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:visibility="gone"
+        android:background="@color/white">
+        <com.rent.renters.mylibrary.widgets.CustomButton
+            android:id="@+id/btnBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_medium_margin"
+            android:background="@drawable/rectangle_curve_button"
+            android:gravity="center"
+            android:text="@string/book_now"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+   </LinearLayout>
+</RelativeLayout>

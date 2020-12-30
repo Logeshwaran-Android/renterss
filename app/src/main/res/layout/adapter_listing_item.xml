@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/parentLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rent.renters.mylibrary.widgets.CircleImageView
+                android:id="@+id/ivListImg"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="-70dp"
+                android:src="@drawable/ic_default_circle_profile_img"
+                android:scaleType="centerCrop"/>
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvListName"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@+id/ivListImg"
+                android:maxLines="2"
+                android:gravity="center_vertical"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_marginTop="@dimen/default_small_margin"
+                android:textSize="@dimen/medium_text_size"
+                android:layout_toStartOf="@+id/switchActive"
+                android:textColor="@color/text_app_color"/>
+            <Switch
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_marginTop="@dimen/default_medium_margin"
+                android:id="@+id/switchActive"
+                android:thumb="@drawable/switch_thumb_bg"
+                android:track="@drawable/listing_switch_track_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                android:textColor="#00000000"
+                />
+            <View
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_gray_color"
+                android:layout_below="@+id/tvListName"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_toEndOf="@+id/ivListImg"/>
+
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvManageListing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivListImg"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginTop="@dimen/default_small_margin"
+                android:text="@string/manage_listing"
+                android:layout_below="@+id/listView"
+                android:textColor="@color/text_red"/>
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvManageCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivListImg"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginTop="@dimen/default_small_margin"
+                android:text="@string/manage_calendar"
+                android:layout_below="@+id/tvManageListing"
+                android:textColor="@color/text_red"/>
+
+            <com.rent.renters.mylibrary.widgets.CustomButton
+                android:id="@+id/btnStatus"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_curve_button"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_marginBottom="@dimen/default_medium_margin"
+                android:text="@string/publish"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/text_white"
+                android:layout_below="@+id/tvManageListing"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

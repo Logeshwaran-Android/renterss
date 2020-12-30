@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.listing.ListYourSpaceActivity">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/app_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <View
+            android:id="@+id/viewClose"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/default_small_margin"
+            android:layout_marginTop="@dimen/default_small_margin"
+            android:background="@null" />
+
+        <ImageButton
+            android:background="@null"
+            android:id="@+id/imgBtnBack"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/default_medium_margin"
+            android:layout_marginTop="@dimen/default_medium_margin"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_close_white" />
+
+
+    </RelativeLayout>
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+        android:id="@+id/tvListSpaceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_color"
+        android:paddingStart="@dimen/default_medium_margin"
+        android:paddingTop="@dimen/default_small_margin"
+        android:paddingEnd="@dimen/default_medium_margin"
+        android:paddingBottom="@dimen/default_extra_large_margin"
+        android:text="@string/great_progress"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvListSpaceTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/llSetTheScene"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvSetScene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:text="@string/set_the_scene"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/large_text_size"
+                    />
+                <ImageView
+                    android:id="@+id/ivSetTheScene"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_check_circle"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:visibility="gone"/>
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvSetSceneItems"
+                    android:textColor="@color/text_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="@string/set_scene_item"
+                    android:textSize="@dimen/medium_text_size"
+                    android:layout_below="@+id/tvSetScene"/>
+                <LinearLayout
+                    android:id="@+id/llChangeSetTheScene"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSetSceneItems"
+                    android:orientation="vertical">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvChangeSetTheScene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:text="@string/change"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_red"
+                    android:visibility="gone"
+                    />
+
+
+                <com.rent.renters.mylibrary.widgets.CustomButton
+                    android:id="@+id/btnSetTheScene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:background="@drawable/rectangle_curve_button"
+                    android:drawableEnd="@drawable/ic_next_arrow_white"
+                    android:paddingStart="@dimen/default_medium_margin"
+                    android:paddingEnd="@dimen/default_medium_margin"
+                    android:text="@string/txt_continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewSetSpace"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:background="@color/light_gray_color"
+                    android:layout_below="@+id/llChangeSetTheScene"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llSpaceLookups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvSpaceLookups"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:text="@string/space_look_ups"
+                    android:textColor="@color/text_hide_color"
+                    android:textSize="@dimen/large_text_size" />
+                <ImageView
+                    android:id="@+id/ivSpaceLookUps"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_check_circle"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:visibility="gone"/>
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvSpaceLookupsItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="@string/space_look_ups_item"
+                    android:textSize="@dimen/medium_text_size"
+                    android:textColor="@color/text_hide_color"
+                    android:layout_below="@+id/tvSpaceLookups"/>
+                <LinearLayout
+                    android:id="@+id/llChangeSpaceLookups"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSpaceLookupsItem"
+                    android:orientation="vertical">
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvChangeSpaceLookups"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:text="@string/change"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_red"
+                    android:visibility="gone"
+                    />
+
+                <com.rent.renters.mylibrary.widgets.CustomButton
+                    android:id="@+id/btnSpaceLookUps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:background="@drawable/rectangle_curve_button"
+                    android:drawableEnd="@drawable/ic_next_arrow_white"
+                    android:paddingStart="@dimen/default_medium_margin"
+                    android:paddingEnd="@dimen/default_medium_margin"
+                    android:text="@string/txt_continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:visibility="gone"
+                    />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewSpaceLookUps"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:background="@color/light_gray_color"
+                    android:layout_below="@+id/llChangeSpaceLookups"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llGuests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/default_medium_margin">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvGuests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:text="@string/get_ready_guest"
+                    android:textColor="@color/text_hide_color"
+                    android:textSize="@dimen/large_text_size" />
+                <ImageView
+                    android:id="@+id/ivGuests"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_check_circle"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:visibility="gone"/>
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvGuestsItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="@string/guests_item"
+                    android:textSize="@dimen/medium_text_size"
+                    android:textColor="@color/text_hide_color"
+                    android:layout_below="@+id/tvGuests"/>
+                <LinearLayout
+                    android:id="@+id/llChangeGuests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvGuestsItem"
+                    android:orientation="vertical">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextView
+                    android:id="@+id/tvChangeGuests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:text="@string/change"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_red"
+                    android:visibility="gone"
+                    />
+                <com.rent.renters.mylibrary.widgets.CustomButton
+                    android:id="@+id/btnGuests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:background="@drawable/rectangle_curve_button"
+                    android:drawableEnd="@drawable/ic_next_arrow_white"
+                    android:paddingStart="@dimen/default_medium_margin"
+                    android:paddingEnd="@dimen/default_medium_margin"
+                    android:text="@string/txt_continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewGuests"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    android:layout_marginBottom="@dimen/default_medium_margin"
+                    android:background="@color/light_gray_color"
+                    android:layout_below="@+id/llChangeGuests"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

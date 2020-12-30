@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <com.rent.renters.mylibrary.widgets.CustomTextView
+        android:id="@+id/tvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@drawable/search_edit_text"
+        android:drawableStart="@drawable/ic_search_icon"
+        android:drawablePadding="10dp"
+        android:gravity="start|center"
+        android:singleLine="true"
+        android:hint="@string/search_hint"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+       android:layout_below="@+id/tvSearch"
+        shimmer:duration="1500"
+        android:visibility="visible"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_marginTop="@dimen/default_extra_large_margin"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_width="200dp"
+                android:layout_height="@dimen/placeholderTextHeight"
+                android:background="@color/light_gray_color" />
+
+        <!-- Adding 7 rows of placeholders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+
+        </LinearLayout>
+            <View
+                android:layout_marginTop="@dimen/default_extra_large_margin"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_width="200dp"
+                android:layout_height="@dimen/placeholderTextHeight"
+                android:background="@color/light_gray_color" />
+
+            <!-- Adding 7 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/data_placeholder_layout" />
+                <include layout="@layout/data_placeholder_layout" />
+                <include layout="@layout/data_placeholder_layout" />
+
+            </LinearLayout>
+            <View
+                android:layout_marginTop="@dimen/default_extra_large_margin"
+                android:layout_width="200dp"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_height="@dimen/placeholderTextHeight"
+                android:background="@color/light_gray_color" />
+
+            <!-- Adding 7 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/data_placeholder_layout" />
+                <include layout="@layout/data_placeholder_layout" />
+                <include layout="@layout/data_placeholder_layout" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svSpaceType"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvSearch"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/default_medium_margin">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSpaceType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvSpaceTypes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explore_property_types"
+                    android:textSize="@dimen/large_text_size"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSpacesTypes"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpaceTypes"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvFeatureDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/featured_destination"
+                    android:gravity="start"
+                    android:textSize="@dimen/large_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSpacesTypes" />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvFeatureDestDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/sample_text"
+                    android:gravity="start"
+                    android:textSize="@dimen/small_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFeatureDest" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSpacesItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFeatureDestDesc" />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvRentersPlaces"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/renters_places_to_stay"
+                    android:gravity="start"
+                    android:textSize="@dimen/large_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSpacesItems" />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvRentersPlacesDesc"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/sample_text"
+                    android:gravity="start"
+                    android:textSize="@dimen/small_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRentersPlaces" />
+
+
+                <ImageView
+                    android:id="@+id/ivRentersPlaces"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_mall_shop"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRentersPlacesDesc" />
+
+                <com.rent.renters.mylibrary.widgets.CustomButton
+                    android:id="@+id/btnExplore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explore_now"
+                    android:paddingStart="@dimen/text_view_padding"
+                    android:paddingEnd="@dimen/text_view_padding"
+                    android:textSize="@dimen/small_text_size"
+                    android:textColor="@color/text_app_color"
+                    android:background="@drawable/rectangle_border_button"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    app:layout_constraintEnd_toEndOf="@+id/ivRentersPlaces"
+                    app:layout_constraintStart_toStartOf="@+id/ivRentersPlaces"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivRentersPlaces"
+                    app:layout_constraintTop_toTopOf="@+id/ivRentersPlaces" />
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvPlacesToStay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/places_to_stay"
+                    android:gravity="start"
+                    android:textSize="@dimen/large_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivRentersPlaces" />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvPlacesToStayDesc"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/sample_text"
+                    android:gravity="start"
+                    android:textSize="@dimen/small_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPlacesToStay" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPlacesToStay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPlacesToStayDesc" />
+                <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                    android:id="@+id/tvTrendingDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_large_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/trending_destination"
+                    android:gravity="start"
+                    android:textSize="@dimen/large_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvPlacesToStay" />
+
+                <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                    android:id="@+id/tvTrendingDestinationDesc"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:textColor="@color/text_black"
+                    android:text="@string/sample_text"
+                    android:gravity="start"
+                    android:textSize="@dimen/small_text_size"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTrendingDestination" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTrendingDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_extra_large_margin"
+                    android:layout_marginTop="@dimen/default_medium_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTrendingDestinationDesc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

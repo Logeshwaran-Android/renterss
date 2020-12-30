@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".app.ui.bookingSteps.AddCouponActivity">
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout"/>
+
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvAddCoupon"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_marginTop="@dimen/default_medium_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:text="@string/add_coupon"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
+    <ImageView
+        android:id="@+id/ivNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_next_circle_btn" />
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvCouponCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_medium_margin"
+        android:layout_marginTop="@dimen/default_large_margin"
+        android:layout_marginRight="@dimen/default_medium_margin"
+        android:hint="@string/coupon_code"
+        android:imeOptions="actionNext"
+        android:textColorHint="@color/dark_gray_color"
+        android:theme="@style/TextLabelBlack"
+        app:hintTextAppearance="@style/TextLabelBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddCoupon"
+        app:layout_constraintVertical_bias="0.0"/>
+
+        <com.rent.renters.mylibrary.widgets.CustomEdittext
+            android:id="@+id/etCouponCode"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:paddingTop="@dimen/material_text_view_padding"
+            android:layout_marginLeft="@dimen/default_medium_margin"
+            android:layout_marginTop="@dimen/default_small_margin"
+            android:layout_marginRight="@dimen/default_medium_margin"
+            android:paddingBottom="25dp"
+            android:singleLine="true"
+            android:textColor="@color/text_black"
+            android:textCursorDrawable="@color/dark_gray_color"
+            android:textSize="@dimen/small_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="@string/enter_coupon_code"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCouponCode"
+            app:layout_constraintVertical_bias="0.0"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

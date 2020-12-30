@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.bookingSteps.ReviewAndPayActivity">
+    <include
+        layout="@layout/header_layout"
+        android:id="@+id/headerLayout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toTopOf="@+id/llBottomLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvStep"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:layout_marginBottom="@dimen/default_medium_margin"
+                android:text="@string/step_four_of_four"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvReviewAndPay"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/review_and_pay"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/large_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStep"
+                />
+
+            <ImageView
+                android:id="@+id/ivProperty"
+                android:layout_width="110dp"
+                android:layout_height="90dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:src="@drawable/ic_empty_space"
+                android:scaleType="centerCrop"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvPropertyName"
+                app:layout_constraintTop_toBottomOf="@+id/tvReviewAndPay" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvPropertyName"
+
+                android:maxWidth="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                android:textColor="@color/text_black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivProperty" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvHostName"
+                android:textColor="@color/text_black"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPropertyName" />
+
+            <View
+                android:id="@+id/viewStep"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@color/light_gray_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProperty"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvAddPayment"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_medium_margin"
+                android:text="@string/add_payment"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewStep"
+                app:layout_constraintTop_toTopOf="@+id/ivAddPayment"
+                app:layout_constraintBottom_toBottomOf="@+id/ivAddPayment"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+
+            <View
+                android:id="@+id/viewAddPay"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvAddPayment"
+                app:layout_constraintTop_toBottomOf="@+id/viewStep"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/ivAddPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_margin="@dimen/default_medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvAddPayment"
+                app:layout_constraintTop_toBottomOf="@+id/viewStep"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_next_arrow"
+                android:visibility="gone"/>
+            <View
+                android:id="@+id/viewAddPayment"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@color/light_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivAddPayment"
+                android:visibility="gone"
+                 />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvDayPrice"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewAddPayment"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvPriceVal"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvDayPrice"
+                app:layout_constraintTop_toBottomOf="@+id/viewAddPayment"
+                app:layout_constraintVertical_bias="0.0" />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvDiscountPrice"
+                android:textColor="@color/text_app_color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvDiscountPriceVal"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDayPrice"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvDiscountPriceVal"
+                android:textColor="@color/text_app_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvDiscountPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvDayPrice"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvServiceFee"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/service_fee"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDiscountPrice"
+                app:layout_constraintVertical_bias="0.0"
+                />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvServiceFeeVal"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="$10"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvServiceFee"
+                app:layout_constraintTop_toBottomOf="@+id/tvDiscountPrice"
+                app:layout_constraintVertical_bias="0.0" />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvRemoveCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/remove_coupon"
+                android:textSize="@dimen/medium_text_size"
+                android:textColor="@color/text_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvServiceFee"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvAddCoupon"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/add_coupon"
+                android:textSize="@dimen/medium_text_size"
+                android:textColor="@color/text_app_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRemoveCoupon"
+                app:layout_constraintVertical_bias="0.0" />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvDiscountFee"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/discount_fee_minus"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddCoupon"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvDiscountFeeVal"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="$10"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvDiscountFee"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddCoupon"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvTotalPrice"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:text="@string/total_price"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDiscountFee"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvTotalPriceVal"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvDiscountFeeVal"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/viewPrice"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:background="@color/light_gray_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalPrice"
+                app:layout_constraintVertical_bias="0.0" />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvCancellationPolicy"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                android:text="@string/cancellation_policy_colan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewPrice"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvCancellationPolicyVal"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCancellationPolicy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCancellationPolicy"
+                app:layout_constraintTop_toTopOf="@+id/tvCancellationPolicy"
+                app:layout_constraintHorizontal_bias="0.0"
+                 />
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvCancellationPolicyDesc"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_medium_margin"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCancellationPolicy"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <com.rent.renters.mylibrary.widgets.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnMakePayment"
+
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@drawable/rectangle_curve_button"
+        android:text="@string/make_payment"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

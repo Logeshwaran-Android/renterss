@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSpaceType"
+        android:layout_width="@dimen/space_gallery_image_width"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginEnd="@dimen/default_small_margin"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/linLaySpaceType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/ivSpaceGalleryImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_type_image_height"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageButton
+                android:id="@+id/imgBtnDeleteGalleryImage"
+                android:background="@null"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="@dimen/text_view_padding"
+                android:scaleType="center"
+                android:maxLines="2"
+                android:gravity="start|center"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/default_small_margin"
+                app:srcCompat = "@drawable/ic_action_delete"
+                android:tint="@color/app_color"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

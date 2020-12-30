@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvFilterItem"
+        android:textColor="@color/text_black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ckFilterItem"
+        app:layout_constraintTop_toTopOf="@+id/ckFilterItem"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ckFilterItem"
+        app:layout_constraintHorizontal_bias="0.0"
+        />
+    <CheckBox
+        android:id="@+id/ckFilterItem"
+        android:button="@drawable/checkbox_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"
+        app:layout_constraintStart_toEndOf="@+id/tvFilterItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

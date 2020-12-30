@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSavedList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:textSize="@dimen/large_text_size" />
+
+
+    <include
+        layout="@layout/no_data_layout"
+        android:id="@+id/noDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:layout_marginBottom="@dimen/default_medium_margin"
+        android:textSize="@dimen/large_text_size"
+        android:visibility="gone"
+
+        />
+
+</LinearLayout>

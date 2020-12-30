@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008489</color>
+    <color name="colorPrimaryDark">#008489</color>
+    <color name="colorAccent">#008489</color>
+    <color name="text_white">#E6FFFFFF</color>
+    <color name="text_app_color">#008489</color>
+    <color name="app_transparent_color">#00000000</color>
+    <color name="app_color">#008489</color>
+    <color name="welcome_app_color">#FF896D</color>
+
+    <color name="app_color_transparent">#90008489</color>
+    <color name="map_pin_transparent">#40008489</color>
+    <color name="light_gray_color">#CCDCDCDC</color>
+    <color name="dark_gray_color">#696969</color>
+
+    <color name="example_4_grey">#474747</color>
+
+    <color name="chat_gray">#F0F4F7</color>
+
+    <color name="example_4_grey_past">#BEBEBE</color>
+    <color name="text_black">#464646</color>
+    <color name="text_hide_color">#d3d3d3</color>
+    <color name="text_red">#FB1B00</color>
+    <color name="text_green">#3DC77E</color>
+    <color name="text_yellow">#F3A139</color>
+    <color name="lavender_color">#B2DADB</color>
+    <color name="white_gray_color">#F5F5F5</color>
+    <color name="app_background_color">#FAFAFA</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_gray">#d3d3d3</color>
+    <color name="inbox_gray_color">#ECECEC</color>
+</resources>

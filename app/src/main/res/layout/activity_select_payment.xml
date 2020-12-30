@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.ui.payment.SelectPaymentActivity">
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header_layout"/>
+
+
+    <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+        android:id="@+id/tvSelectPayment"
+        android:textColor="@color/text_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/select_payment"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvCreditCard"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:drawableStart="@drawable/ic_credit_card"
+        android:text="@string/credit_card"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:gravity="start|center"
+        android:textSize="@dimen/medium_text_size"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectPayment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableEnd="@drawable/ic_next_arrow"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <View
+        android:id="@+id/viewCreditCard"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@color/light_gray_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreditCard"
+        app:layout_constraintVertical_bias="0.0" />
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvPaypal"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/paypal"
+        android:gravity="start|center"
+        android:drawableStart="@drawable/ic_paypal"
+        android:drawablePadding="16dp"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCreditCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:drawableEnd="@drawable/ic_next_arrow"
+        android:visibility="gone"/>
+
+
+    <View
+        android:id="@+id/viewPaypal"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@color/light_gray_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPaypal"
+        app:layout_constraintVertical_bias="0.0"
+        />
+    <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+        android:id="@+id/tvStripe"
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:text="@string/stripe"
+        android:gravity="start|center"
+        android:textSize="@dimen/medium_text_size"
+        android:drawableStart="@drawable/ic_stripe"
+        android:drawablePadding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPaypal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:drawableEnd="@drawable/ic_next_arrow"
+        android:visibility="gone"/>
+
+
+    <View
+        android:id="@+id/viewStripe"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/default_medium_margin"
+        android:background="@color/light_gray_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStripe"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

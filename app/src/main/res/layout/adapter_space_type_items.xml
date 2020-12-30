@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/parentLayout"
+    android:clickable="true"
+    android:focusable="true"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--<androidx.viewpager.widget.ViewPager
+          android:id="@+id/vpImages"
+          android:layout_width="fill_parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintVertical_bias="0.0"
+          android:layout_height="@dimen/space_type_item_viewpager_height">-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"
+        android:layout_marginStart="@dimen/default_medium_margin"
+        android:layout_marginEnd="@dimen/default_medium_margin"
+        android:background="@color/white"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSpaceTypeItem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_type_item_image_height"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                card_view:cardElevation="@dimen/card_elevation"
+                android:layout_marginTop="@dimen/default_small_margin"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_type_item_viewpager_height"/>
+                <com.rent.renters.mylibrary.util.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"
+                    android:layout_alignParentBottom="true"
+                    />
+
+
+
+            <ImageButton
+                android:id="@+id/imgBtnFavorite"
+                android:padding="@dimen/button_padding"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/default_medium_margin"
+                android:contentDescription="@string/app_name"
+               android:layout_alignParentEnd="true"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:outlineAmbientShadowColor="@color/gray"
+                android:outlineSpotShadowColor="@color/gray"
+                android:src="@drawable/ic_favorite"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewSemiBold
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+
+                android:id="@+id/tvSpaceSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_app_color"
+                android:textSize="@dimen/micro_text_size"
+                android:layout_marginTop="@dimen/default_small_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvSpaceTypeItem"
+                app:layout_constraintVertical_bias="0.0"
+
+                />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewBold
+                android:id="@+id/tvSpaceTypeItemName"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/large_text_size"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSpaceSize"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.rent.renters.mylibrary.widgets.CustomTextViewLight
+                android:id="@+id/tvSpacePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_text_size"
+                android:layout_marginStart="@dimen/default_small_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:text="fadsadfasd"
+                android:textSize="@dimen/small_text_size"
+                android:textColor="@color/text_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSpaceTypeItemName"
+                app:layout_constraintVertical_bias="0.0"
+
+                />
+            <ImageButton
+                android:id="@+id/imgBtnInstant"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="@dimen/default_medium_margin"
+                android:contentDescription="@string/app_name"
+                android:background="@null"
+                app:srcCompat="@drawable/ic_instant_book"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSpacePrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tvSpacePrice"
+                app:layout_constraintTop_toTopOf="@+id/tvSpacePrice"
+                />
+            <RelativeLayout
+                android:id="@+id/rlLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnInstant"
+                app:layout_constraintTop_toBottomOf="@+id/tvSpaceTypeItemName"
+                app:layout_constraintVertical_bias="0.0">
+
+            <com.rent.renters.mylibrary.widgets.CustomTextView
+                android:id="@+id/tvSpaceCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_map_location_pin"
+                android:drawablePadding="5dp"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/default_medium_margin"
+                android:layout_marginEnd="@dimen/default_small_margin"
+                android:textSize="@dimen/micro_text_size"
+                android:layout_alignParentEnd="true"
+                android:singleLine="true"
+                android:textColor="@color/text_black"
+                />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
